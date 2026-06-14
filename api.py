@@ -196,7 +196,16 @@ async def get_data(api_key: str = Depends(verify_api_key)):
     try:
         cursor = collection.find(
             {},
-            {"_id": 1, "topic_searched": 1, "created_at": 1, "title": 1, "summary": 1, "articles": 1}
+            {
+                "_id": 1,
+                "topic_searched": 1,
+                "created_at": 1,
+                "report_title": 1,
+                "generated_at": 1,
+                "total_topics": 1,
+                "date_range": 1,
+                "topics": 1
+            }
         ).sort("_id", -1).limit(10)
 
         reports = await cursor.to_list(length=10)
