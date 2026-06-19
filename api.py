@@ -94,7 +94,7 @@ async def run_crew_and_save():
     logger.info("Scheduled job started: Fetching news from CrewAI API...")
 
     try:
-        async with httpx.AsyncClient(timeout=120.0) as http_client:
+        async with httpx.AsyncClient(timeout=600.0) as http_client:
             response = await http_client.post(
                 "https://crewai-api-news.onrender.com/run-crew"
             )
