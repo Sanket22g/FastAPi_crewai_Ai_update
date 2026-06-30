@@ -96,7 +96,8 @@ async def run_crew_and_save():
     try:
         async with httpx.AsyncClient(timeout=600.0) as http_client:
             response = await http_client.post(
-                "https://crewai-api-news.onrender.com/run-crew"
+                "https://crewai-api-news-bg5k.onrender.com/run-crew"
+                
             )
             response.raise_for_status()
             data = response.json()
